@@ -1,3 +1,5 @@
+require 'pry'
+
 class Translator
   attr_reader :dictionary
 
@@ -40,4 +42,11 @@ class Translator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def eng_to_morse(string)
+    string.split('').map { |character| @dictionary.key character }.join
+  end
 end
+translator = Translator.new
+puts 'ok'
+puts translator.eng_to_morse("a")
