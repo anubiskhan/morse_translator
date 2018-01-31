@@ -44,7 +44,7 @@ class Translator
   end
 
   def eng_to_morse(string)
-    string.split('').map { |character| @dictionary.key character }.join
+    string.downcase.split('').map { |character| @dictionary.key @dictionary }.join
   end
 end
 translator = Translator.new
